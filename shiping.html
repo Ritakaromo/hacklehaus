@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HackleHausFly Co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .confirm-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* only blur effect when disabled */
+.confirm-btn:disabled {
+  filter: blur(2px);
+  cursor: not-allowed;
+}
+
+  </style>
+
+
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <h1>HackleHausFly.Co</h1>
+  
+      <!-- Burger button (only visible on mobile) -->
+      <button class="burger" aria-label="Toggle menu">&#9776;</button>
+  
+      <!-- Navigation menu -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="us.html">Us</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html">My cart</a>
+        <a href="payment.html">Order</a>
+        <a href="shiping.html">Shipment</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  
+    <div class="hero">
+      <h2 class="fly-up">Crafted<br>for the Catch.</h2>
+      <p class="fly-up">Where artisan flies meet unforgettable waters.</p>
+      <div class="cta-button-wrapper">
+        <a href="shop.html" class="bk-button">Shop Now</a>
+      </div>
+    </div>
+  </header>
+  
+  <section class="shop-header">
+
+    <strong>Looking for something custom?</strong>
+  <p>We’re happy to craft personalized fly orders tailored to your preferences—whether it’s a specific pattern, hook size, color combination, or a unique request for your next fishing adventure.
+
+      Simply email us at <a href="mailto:hacklehausflyco@gmail.com">hacklehausflyco@gmail.com</a>.
+      with your details, and we’ll get back to you with options, pricing, and turnaround time.
+      
+      🎣 Your vision, our craftsmanship—let’s create something special together.</p>   
+
+  </section>
+
+  
+  <section class="shipment-page">
+    <h2>Shipment</h2>
+    <p>
+      At HackleHausFly Co., we’re committed to delivering your orders swiftly, securely, and transparently.  
+      We partner with trusted carriers to ensure reliable service for all our customers.
+    </p>
+  
+    <ul class="shipment-list">
+      <li><strong>Carriers:</strong> DHL and local delivery partners.</li>
+      <li><strong>Tracking:</strong> Receive a tracking link via email once your order is processed.</li>
+      <li><strong>Delivery Times:</strong> 
+        <ul>
+          <li>Kenya: 2–5 business days</li>
+          <li>International: 7–14 business days</li>
+        </ul>
+      </li>
+      <li><strong>Shipping Fees:</strong> Vary by location and order size. Free delivery available for qualifying purchases.</li>
+      <li><strong>Packaging:</strong> Eco-friendly, waterproof materials. Items may ship together or separately depending on availability.</li>
+      <li><strong>International Orders:</strong> Customs duties and taxes may apply, paid by recipient.</li>
+      <li><strong>Delays:</strong> HackleHausFly Co. is not liable for external delays (e.g., weather, customs clearance).</li>
+    </ul>
+  
+    <p class="support">
+      📩 For assistance, contact us at 
+      <a href="mailto:info.hacklehaus@gmail.com">info.hacklehaus@gmail.com</a>  
+      or call <a href="tel:+254798569219">+254 798569219</a>.
+    </p>
+  </section>
+  
+   
+
+   <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="us.html">Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="payment.html">Order</a></li>
+          <li><a href="shiping.html">Shipment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+     
+      
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>📍 Nairobi, Kenya</li>
+          <li>📞 <a href="tel:+254798569219">+254 798569219</a>, 📞 <a href="tel:+254 724585160">+254 724585160</a>. </li>
+          <li>💬 <a href="tel:+2545538214">+254 745538214</a> , 💬 <a href="tel:+254722613945">+254 722613945</a></li>
+          <li><p>
+            <a href="mailto:info.hacklehaus@gmail.com">info.hacklehaus@gmail.com</a>  
+          </p>
+          <p>
+            <a href="mailto:hacklehausflyco@gmail.com">hacklehausflyco@gmail.com</a>
+          </p></li>
+
+        </ul>
+      </div>
+
+
+      <div class="footer-column">
+        <h4>Operating Hours</h4>
+        <ul>
+          <li>Mon–Fri: 8:00am – 6:00pm</li>
+          <li>Sat: 9:00am – 4:00pm</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 HackleHausFly Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle menu
+    burger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('show');
+      burger.classList.toggle('active', isOpen);
+  
+      // Change icon ☰ ↔ ✖
+      burger.innerHTML = isOpen ? '&#10006;' : '&#9776;';
+    });
+  
+    // Close when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      });
+    });
+  
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      }
+    });
+  </script>
+  
+  
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalContainer = document.getElementById('cart-total');
+      cartContainer.innerHTML = '';
+  
+      let totalKES = 0;
+      let totalUSD = 0;
+  
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      } else {
+        cart.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'cart-row';
+          row.innerHTML = `
+            <span class="item-name">${item.name}</span>
+            <span class="item-qty">Qty: ${item.qty}</span>
+            <span class="item-price">KSh ${(item.priceKES * item.qty).toFixed(2)} / $${(item.priceUSD * item.qty).toFixed(2)}</span>
+          `;
+          cartContainer.appendChild(row);
+          totalKES += item.priceKES * item.qty;
+          totalUSD += item.priceUSD * item.qty;
+        });
+        totalContainer.innerHTML = `<strong>Total:</strong> KSh ${totalKES.toFixed(2)} / $${totalUSD.toFixed(2)}`;
+      }
+     
+      // Form Validation + EmailJS
+      document.getElementById("orderForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+  
+        let valid = true;
+        document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+  
+        const fullname = document.getElementById("fullname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const payment = document.querySelector('input[name="payment"]:checked');
+  
+        if (!fullname) {
+          document.getElementById("nameError").textContent = "Full name is required.";
+          valid = false;
+        }
+        if (!email) {
+          document.getElementById("emailError").textContent = "Email is required.";
+          valid = false;
+        }
+        if (!phone) {
+          document.getElementById("phoneError").textContent = "Phone number is required.";
+          valid = false;
+        }
+        if (!address) {
+          document.getElementById("addressError").textContent = "Address is required.";
+          valid = false;
+        }
+        if (!payment) {
+          document.getElementById("paymentError").textContent = "Please select a payment method.";
+          valid = false;
+        }
+  
+        if (valid) {
+          const orderDetails = cart.map(item => `${item.name} (Qty: ${item.qty})`).join(", ");
+  
+          // Prepare params for EmailJS
+          const templateParams = {
+            fullname,
+            email,
+            phone,
+            address,
+            payment: payment.value,
+            order: orderDetails,
+            totalKES: totalKES.toFixed(2),
+            totalUSD: totalUSD.toFixed(2)
+          };
+  
+         }
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const confirmBtn = document.querySelector(".confirm-btn");
+    
+      // get order total from localStorage
+      const orderTotal = JSON.parse(localStorage.getItem("orderTotal")) || { totalKES: "0.00" };
+      const total = parseFloat(orderTotal.totalKES);
+    
+      // disable if 0
+      if (total <= 0) {
+        confirmBtn.disabled = true;
+      } else {
+        confirmBtn.disabled = false;
+      }
+    });
+    </script>
+     
+  
+  </body>
+  </html>
+  

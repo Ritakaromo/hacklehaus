@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackleHausFly Co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+        <h1>HackleHausFlyCo</h1>
+      
+        <!-- Burger button (only visible on mobile) -->
+        <button class="burger" aria-label="Toggle menu">&#9776;</button>
+      
+        <!-- Navigation menu -->
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="us.html">Us</a>
+          <a href="tying.html">Fly Tying</a>
+          <a href="shop.html">Shop</a>
+          <a href="cart.html">My cart</a>
+          <a href="payment.html">Order</a>
+          <a href="shiping.html">Shipment</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      
+        <!-- Overlay for closing menu -->
+        <div class="nav-overlay"></div>
+      </div>
+      
+  
+    <div class="hero">
+      <h2 class="fly-up">Crafted<br>for the Catch.</h2>
+      <p class="fly-up">Where artisan flies meet unforgettable waters.</p>
+      <div class="cta-button-wrapper">
+        <a href="shop.html" class="bk-button">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="fly-tying">
+    <div class="fly-tying-header">
+      <h2>Custom Fly Tying Orders</h2>
+      <p>
+        At HackleHausFly Co, we know that every angler has unique preferences. 
+        That’s why we offer <strong>custom fly tying services</strong> tailored to your fishing style, 
+        target species, and waters. Whether it’s a subtle variation of a classic dry fly 
+        or a fully custom design, we’ll tie flies to match your exact needs.
+      </p>
+    </div>
+  
+    <div class="fly-tying-info">
+      <h3>What We Offer</h3>
+      <ul>
+        <li><strong>Any Fly Pattern:</strong> Classic dries, nymphs, emergers, terrestrials, and streamers.</li>
+        <li><strong>Color & Size Options:</strong> Choose your hook size, body color, wing variation, or material preference.</li>
+        <li><strong>Custom Requests:</strong> We can adapt patterns for tougher waters, larger fish, or selective trout.</li>
+        <li><strong>Pricing:</strong> Custom flies start at <span>KSh 700 / $5.00</span> each (price may vary by complexity).</li>
+        <li><strong>Turnaround:</strong> Small custom sets usually ship in 3–7 days. Bulk orders may take longer.</li>
+      </ul>
+    </div>
+  
+    <div class="fly-tying-order">
+      <h3>How to Place a Custom Order</h3>
+      <p>
+        Simply send us an email with your order details, and we’ll reply with a quote 
+        and delivery timeline.
+      </p>
+      <p>
+        Please include:
+      </p>
+      <ul>
+        <li>Fly Pattern (e.g., Stimulator, Custom Hopper, etc.)</li>
+        <li>Preferred Colors</li>
+        <li>Hook Size</li>
+        <li>Quantity</li>
+        <li>Any special notes (materials, durability, waters, target species, etc.)</li>
+      </ul>
+  
+      <p class="email-order">
+        📧 Email your custom order to:  
+        <a href="mailto:orders@hacklehausfly.co">orders@hacklehausfly.co</a>
+      </p>
+  
+      <p>
+        We’ll tie your flies with the same attention to detail and 
+        craftsmanship that goes into every pattern in our shop. 
+        Your custom flies are guaranteed to be <strong>fish-ready and durable</strong>.
+      </p>
+    </div>
+  </section>
+  
+
+
+
+
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="us.html">Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="payment.html">Order</a></li>
+          <li><a href="shiping.html">Shipment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>📍 Nairobi, Kenya</li>
+          <li>📞 <a href="tel:+254798569219">+254 798569219</a>, 📞 <a href="tel:+254 724585160">+254 724585160</a>. </li>
+          <li>💬 <a href="tel:+2545538214">+254 745538214</a> , 💬 <a href="tel:+254722613945">+254 722613945</a></li>
+          <li><p>
+            <a href="mailto:info.hacklehaus@gmail.com">info.hacklehaus@gmail.com</a>  
+          </p>
+          <p>
+            <a href="mailto:hacklehausflyco@gmail.com">hacklehausflyco@gmail.com</a>
+          </p></li>
+
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Operating Hours</h4>
+        <ul>
+          <li>Mon–Fri: 8:00am – 6:00pm</li>
+          <li>Sat: 9:00am – 4:00pm</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 HackleHausFly Co. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle menu
+    burger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('show');
+      burger.classList.toggle('active', isOpen);
+  
+      // Change icon ☰ ↔ ✖
+      burger.innerHTML = isOpen ? '&#10006;' : '&#9776;';
+    });
+  
+    // Close when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      });
+    });
+  
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      }
+    });
+  </script>
+  
+  
+  
+ 
+</body>
+</html>
+  
+
+
+ 

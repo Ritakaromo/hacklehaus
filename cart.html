@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HackleHausFly Co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <h1>HackleHausFly.Co</h1>
+  
+      <!-- Burger button (only visible on mobile) -->
+      <button class="burger" aria-label="Toggle menu">&#9776;</button>
+
+<div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="us.html">Us</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">My cart</a>
+  <a href="payment.html">Order</a>
+  <a href="shiping.html">Shipment</a>
+  <a href="contact.html">Contact</a>
+</div>
+    </div>
+    
+  
+    <div class="hero">
+      <h2 class="fly-up">Crafted<br>for the Catch.</h2>
+      <p class="fly-up">Where artisan flies meet unforgettable waters.</p>
+      <div class="cta-button-wrapper">
+        <a href="shop.html" class="bk-button">Shop Now</a>
+      </div>
+    </div>
+  </header>
+  
+  <section class="shop-header">
+
+    <strong>Looking for something custom?</strong>
+  <p>We’re happy to craft personalized fly orders tailored to your preferences—whether it’s a specific pattern, hook size, color combination, or a unique request for your next fishing adventure.
+
+      Simply email us at <a href="mailto:hacklehausflyco@gmail.com">hacklehausflyco@gmail.com</a>.
+      with your details, and we’ll get back to you with options, pricing, and turnaround time.
+      
+      🎣 Your vision, our craftsmanship—let’s create something special together.</p>   
+
+  </section>
+
+  <section class="my-cart">
+    <h2>My Cart</h2>
+  
+    <div class="cart-container">
+           <div class="cart-items" id="cart-items"></div>
+    </div>
+  
+    <div class="cart-total" id="cart-total">
+      <strong>Total:</strong> KSh 00.00 / $00.00
+    </div>
+  
+    <div class="back-buttons">
+      <button onclick="clearCart()" class="back-btn" id="clear-btn">Clear Cart</button>
+      <a href="payment.html" class="back-btn proceed-btn" id="proceed-btn">Proceed to Order</a>
+    </div>
+  </section>
+  
+  
+     
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="us.html">Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="payment.html">Order</a></li>
+          <li><a href="shiping.html">Shipment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>📍 Nairobi, Kenya</li>
+          <li>📞 <a href="tel:+254798569219">+254 798569219</a>, 📞 <a href="tel:+254 724585160">+254 724585160</a>. </li>
+          <li>💬 <a href="tel:+2545538214">+254 745538214</a> , 💬 <a href="tel:+254722613945">+254 722613945</a></li>
+          <li><p>
+            <a href="mailto:info.hacklehaus@gmail.com">info.hacklehaus@gmail.com</a>  
+          </p>
+          <p>
+            <a href="mailto:hacklehausflyco@gmail.com">hacklehausflyco@gmail.com</a>
+          </p></li>
+
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Operating Hours</h4>
+        <ul>
+          <li>Mon–Fri: 8:00am – 6:00pm</li>
+          <li>Sat: 9:00am – 4:00pm</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 HackleHausFly Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+  
+    // Toggle menu
+    burger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('show');
+      burger.classList.toggle('active', isOpen);
+  
+      // Change icon ☰ ↔ ✖
+      burger.innerHTML = isOpen ? '&#10006;' : '&#9776;';
+    });
+  
+    // Close when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      });
+    });
+  
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+        navLinks.classList.remove('show');
+        burger.classList.remove('active');
+        burger.innerHTML = '&#9776;'; // reset to menu
+      }
+    });
+  </script>
+  
+  
+  
+
+  
+  
+  <script>
+    function clearCart() {
+      localStorage.removeItem('cart');
+      localStorage.setItem('orderTotal', JSON.stringify({
+        totalKES: "0.00",
+        totalUSD: "0.00"
+      }));
+      location.reload();
+    }
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalContainer = document.getElementById('cart-total');
+  
+      cartContainer.innerHTML = '';
+  
+      let totalKES = 0;
+      let totalUSD = 0;
+  
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      } else {
+        cart.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'cart-row';
+  
+          // ✅ Assume min quantity is always 2
+          const minQty = 2;
+          const minPriceKES = item.priceKES * minQty;
+          const minPriceUSD = item.priceUSD * minQty;
+  
+          const selectedPriceKES = item.priceKES * item.qty;
+          const selectedPriceUSD = item.priceUSD * item.qty;
+  
+          row.innerHTML = `
+  <div class="col item-name" data-label="Item">${item.name}</div>
+  <div class="col item-color" data-label="Color">${item.color || '-'}</div>
+  <div class="col item-hook" data-label="Hook Size">${item.hookSize || '-'}</div>
+  <div class="col item-min-qty" data-label="Min Qty">*${minQty}</div>
+  <div class="col item-min-price" data-label="Min Price">KSh ${minPriceKES.toFixed(2)} / $${minPriceUSD.toFixed(2)}</div>
+  <div class="col item-qty" data-label="Qty">*${item.qty}</div>
+  <div class="col item-selected-price" data-label="Total">KSh ${selectedPriceKES.toFixed(2)} / $${selectedPriceUSD.toFixed(2)}</div>
+`;
+
+
+
+  
+          cartContainer.appendChild(row);
+  
+          totalKES += selectedPriceKES;
+          totalUSD += selectedPriceUSD;
+        });
+  
+        totalContainer.innerHTML = `<strong>Total:</strong> KSh ${totalKES.toFixed(2)} / $${totalUSD.toFixed(2)}`;
+  
+        localStorage.setItem('orderTotal', JSON.stringify({
+          totalKES: totalKES.toFixed(2),
+          totalUSD: totalUSD.toFixed(2)
+        }));
+      }
+    });
+  </script>
+  
+  <script>
+    function updateButtonStates() {
+      const proceedBtn = document.getElementById("proceed-btn");
+      const clearBtn = document.getElementById("clear-btn");
+  
+      const orderTotal = JSON.parse(localStorage.getItem("orderTotal")) || { totalKES: "0.00" };
+      const total = parseFloat(orderTotal.totalKES);
+  
+      const isEmpty = total <= 0;
+  
+      // Clear Cart button
+      clearBtn.disabled = isEmpty;
+      clearBtn.classList.toggle("disabled", isEmpty);
+  
+      // Proceed link
+      proceedBtn.classList.toggle("disabled", isEmpty);
+      proceedBtn.setAttribute("aria-disabled", isEmpty ? "true" : "false");
+      proceedBtn.setAttribute("tabindex", isEmpty ? "-1" : "0");
+      proceedBtn.style.pointerEvents = isEmpty ? "none" : "auto";
+      proceedBtn.style.opacity = isEmpty ? "0.5" : "1";
+    }
+  
+    // Run on page load
+    document.addEventListener("DOMContentLoaded", updateButtonStates);
+  
+    // Optional: Call this after cart updates
+    // Example: after adding/removing items
+    // updateButtonStates();
+  </script>
+  
+  
+</body>
+</html>
